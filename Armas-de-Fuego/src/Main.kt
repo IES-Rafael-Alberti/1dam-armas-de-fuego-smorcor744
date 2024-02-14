@@ -16,7 +16,7 @@ fun main() {
     val armas = listOf(pistola, rifle, bazooka)
 
     // Mostrar mensaje de munición extra
-    println("\nMunición extra = ${pistola.cantidadMunicionExtra}... para todas las armas de fuego.\n")
+    println("\nMunición extra = ${ArmaDeFuego.cantidadMunicionExtra}... para todas las armas de fuego.\n")
 
     // Crear mapa con 12 disparos aleatorios
     val mapa = (1..12).map { armas.random() to (1..3).random() }
@@ -42,14 +42,14 @@ fun main() {
     val armas2 = listOf(pistola, rifle, bazooka, casa, coche, bocadillo)
 
     // Mostrar mensaje de munición extra
-    println("\nMunición extra = ${pistola.cantidadMunicionExtra}... para todas las armas de fuego y objetos.\n")
+    println("\nMunición extra = ${ArmaDeFuego.cantidadMunicionExtra}... para todas las armas de fuego y objetos.\n")
 
     // Crear mapa con 9 disparos aleatorios
     val mapa2 = (1..9).map { armas2.random() to (1..3).random() }
 
     // Recorrer el mapa, disparar y mostrar información
     for ((arma, disparosRealizados) in mapa2) {
-        cont += 1
+        cont2 += 1
         println("\n*** Disparo: ${cont2}")
         for (i in 1..disparosRealizados) {
             arma.disparar()
@@ -59,7 +59,7 @@ fun main() {
 }
 class Casa(municion: Int):ArmaDeFuego(
     nombre = "Casa",
-    municionARestar = 1,
+    municionARestar = 3,
     tipoDeMunicion = "Confetti",
     municion = 10){
     /**
@@ -75,7 +75,7 @@ class Casa(municion: Int):ArmaDeFuego(
 }
 class Coche(municion:Int):ArmaDeFuego(
     nombre = "Coche",
-    municionARestar = 0,
+    municionARestar = 5,
     tipoDeMunicion = "Rafagas de luz larga",
     municion = 10){
     /**
@@ -91,7 +91,7 @@ class Coche(municion:Int):ArmaDeFuego(
 }
 class Bocadillo(municion:Int):ArmaDeFuego(
     nombre = "Bocadillo",
-    municionARestar = 0,
+    municionARestar = 4,
     tipoDeMunicion = "Olor a jamón",
     municion = 10){
     /**

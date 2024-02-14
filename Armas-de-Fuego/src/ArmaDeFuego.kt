@@ -27,7 +27,9 @@ abstract class ArmaDeFuego(
     /**
      * Cantidad de munición extra que puede tener el arma.
      */
-    var cantidadMunicionExtra: Int = Random.nextInt(5, 15)
+    companion object{
+        var cantidadMunicionExtra: Int = Random.nextInt(5, 15)
+    }
 
     /**
      * Función que simula un disparo con el arma, restando la munición necesaria.
@@ -51,13 +53,13 @@ abstract class ArmaDeFuego(
     fun recargar() {
         if (cantidadMunicionExtra >= (2 * municionARestar)) {
             this.municion += (2 * municionARestar)
-            this.cantidadMunicionExtra -= (2 * municionARestar)
+            cantidadMunicionExtra -= (2 * municionARestar)
             println("$nombre se ha recargado, munición restante: $municion")
         } else {
             if (cantidadMunicionExtra < (2 * municionARestar)) {
                 if (cantidadMunicionExtra > municionARestar) {
                     this.municion += municionARestar
-                    this.cantidadMunicionExtra -= municionARestar
+                    cantidadMunicionExtra -= municionARestar
                     println("$nombre se ha recargado, munición restante: $municion")
                 } else println("No hay suficiente munición extra para recargar.")
             }
