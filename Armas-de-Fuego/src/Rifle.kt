@@ -7,9 +7,9 @@ import kotlin.random.Random
  */
 class Rifle(municion: Int) : ArmaDeFuego(
     nombre = "Rifle",
-    municion = 10,
+    municionARestar = 2,
     tipoDeMunicion = "60mm",
-    municionARestar = 2
+    municion = 10
 ) {
     /**
      * Propiedad que representa el daño causado por el rifle.
